@@ -1,0 +1,79 @@
+{
+  "routers": [
+    {
+      "name": "Router-1",
+      "interfaces": [
+        {
+          "name": "eth0",
+          "cidr": "192.168.1.0/24"
+        },
+        {
+          "name": "eth1",
+          "cidr": "10.0.0.0/24"
+        }
+      ],
+      "routes": [
+        {
+          "destination": "10.0.0.0/16",
+          "next_hop": "192.168.1.1",
+          "interface": "eth0"
+        },
+        {
+          "destination": "172.16.0.0/12",
+          "next_hop": "192.168.1.254",
+          "interface": "eth0"
+        },
+        {
+          "destination": "0.0.0.0/0",
+          "next_hop": "192.168.1.254",
+          "interface": "eth0"
+        }
+      ]
+    },
+    {
+      "name": "Router-2",
+      "interfaces": [
+        {
+          "name": "eth0",
+          "cidr": "10.0.0.0/24"
+        },
+        {
+          "name": "eth1",
+          "cidr": "10.1.0.0/24"
+        }
+      ],
+      "routes": [
+        {
+          "destination": "192.168.0.0/16",
+          "next_hop": "10.0.0.1",
+          "interface": "eth0"
+        },
+        {
+          "destination": "0.0.0.0/0",
+          "next_hop": "10.0.0.1",
+          "interface": "eth0"
+        }
+      ]
+    },
+    {
+      "name": "Router-3",
+      "interfaces": [
+        {
+          "name": "eth0",
+          "cidr": "10.1.0.0/24"
+        },
+        {
+          "name": "eth1",
+          "cidr": "140.0.0.0/8"
+        }
+      ],
+      "routes": [
+        {
+          "destination": "0.0.0.0/0",
+          "next_hop": "10.1.0.1",
+          "interface": "eth0"
+        }
+      ]
+    }
+  ]
+}

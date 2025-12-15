@@ -1,0 +1,55 @@
+{
+  "name": "Firewall-A",
+  "rules": [
+    {
+      "id": 1,
+      "action": "allow",
+      "protocol": "TCP",
+      "src": "192.168.1.0/24",
+      "dst_port": "80"
+    },
+    {
+      "id": 2,
+      "action": "allow",
+      "protocol": "TCP",
+      "src": "192.168.1.0/24",
+      "dst_port": "443"
+    },
+    {
+      "id": 3,
+      "action": "allow",
+      "protocol": "UDP",
+      "src": "0.0.0.0/0",
+      "dst_port": "53"
+    },
+    {
+      "id": 4,
+      "action": "allow",
+      "protocol": "TCP",
+      "src": "10.0.0.0/8",
+      "dst_port": "22"
+    },
+    {
+      "id": 5,
+      "action": "allow",
+      "protocol": "ICMP",
+      "src": "0.0.0.0/0",
+      "dst_port": "0"
+    },
+    {
+      "id": 6,
+      "action": "deny",
+      "protocol": "TCP",
+      "src": "0.0.0.0/0",
+      "dst_port": "23"
+    },
+    {
+      "id": 7,
+      "action": "deny",
+      "protocol": "ANY",
+      "src": "192.168.100.0/24",
+      "dst_port": "0"
+    }
+  ],
+  "default_action": "deny"
+}
